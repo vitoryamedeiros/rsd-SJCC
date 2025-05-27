@@ -1,0 +1,137 @@
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Site de Comentários
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Inter", sans-serif;
+    }
+    /* Custom scrollbar for comments list */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+ </head>
+ <body class="bg-[#E9E9E9] min-h-screen flex justify-center items-center p-4">
+  <div class="relative bg-[#E9E9E9] rounded-[20px] w-full max-w-[900px] aspect-auto flex flex-col select-none shadow-lg">
+   <!-- Header -->
+   <header class="flex items-center gap-4 px-6 py-4 bg-[#0F0F0F] rounded-t-[20px]">
+    <img alt="Ícone de comentários branco em fundo preto" src="img\logo_SSJC.png" width="50"/>
+    <h1 class="text-white font-semibold text-lg">
+     Comentários
+    </h1>
+   </header>
+   <!-- Main content -->
+   <main class="flex flex-col p-6 gap-6 flex-1 overflow-hidden">
+    <!-- Comentários existentes -->
+    <section class="flex-1 overflow-y-auto scrollbar-hide space-y-4">
+     <!-- Comentário 1 -->
+     <article class="bg-white rounded-[20px] p-4 shadow-sm">
+      <header class="flex items-center gap-3 mb-2">
+       <img alt="Avatar de usuário masculino com cabelo castanho e barba, sorrindo" class="w-10 h-10 rounded-full object-cover" height="40" src="https://storage.googleapis.com/a1aa/image/b03019e4-dc14-459c-1497-d8ed0647ef23.jpg" width="40"/>
+       <div>
+        <p class="text-[#0F0F0F] font-semibold text-sm leading-tight">
+         Kevin De Mitido
+        </p>
+        <time class="text-[#999999] text-xs">
+         24 de fevereiro de 2025, 7:24 am
+        </time>
+       </div>
+      </header>
+      <p class="text-[#0F0F0F] text-base leading-relaxed">
+       Gostei muito do conteúdo, ajudou bastante no meu trabalho!
+      </p>
+     </article>
+     <!-- Comentário 2 -->
+     <article class="bg-white rounded-[20px] p-4 shadow-sm">
+      <header class="flex items-center gap-3 mb-2">
+       <img alt="Avatar de usuário masculino com cabelo claro e terno" class="w-10 h-10 rounded-full object-cover" height="40" src="https://storage.googleapis.com/a1aa/image/6298d227-4d54-4dac-8670-3c1a8d3c5f5f.jpg" width="40"/>
+       <div>
+        <p class="text-[#0F0F0F] font-semibold text-sm leading-tight">
+         Luisa Fernandes
+        </p>
+        <time class="text-[#999999] text-xs">
+         23 de fevereiro de 2025, 3:15 pm
+        </time>
+       </div>
+      </header>
+      <p class="text-[#0F0F0F] text-base leading-relaxed">
+       Poderiam adicionar mais exemplos práticos, seria ótimo!
+      </p>
+     </article>
+     <!-- Comentário 3 -->
+     <article class="bg-white rounded-[20px] p-4 shadow-sm">
+      <header class="flex items-center gap-3 mb-2">
+       <img alt="Avatar de usuário masculino careca, sorrindo" class="w-10 h-10 rounded-full object-cover" height="40" src="https://storage.googleapis.com/a1aa/image/4c182012-cf57-46f2-a17e-61b0e1114cce.jpg" width="40"/>
+       <div>
+        <p class="text-[#0F0F0F] font-semibold text-sm leading-tight">
+         André de Souza
+        </p>
+        <time class="text-[#999999] text-xs">
+         22 de fevereiro de 2025, 11:00 am
+        </time>
+       </div>
+      </header>
+      <p class="text-[#0F0F0F] text-base leading-relaxed">
+       Excelente artigo, muito bem explicado e direto ao ponto.
+      </p>
+     </article>
+    </section>
+    <!-- Formulário para novo comentário -->
+    <section class="bg-white rounded-[20px] p-6 shadow-md">
+     <h2 class="text-[#0F0F0F] font-semibold text-lg mb-4">
+      Deixe seu comentário
+     </h2>
+     <form class="flex flex-col gap-4" id="commentForm">
+      <textarea aria-label="Campo para escrever comentário" class="resize-none border border-[#D9D9D9] rounded-lg p-3 text-[#0F0F0F] text-base placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#FF4A1A]" id="commentText" placeholder="Escreva seu comentário aqui..." required="" rows="4"></textarea>
+      <input aria-label="Campo para nome opcional" class="border border-[#D9D9D9] rounded-lg p-3 text-[#0F0F0F] text-base placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#FF4A1A]" id="commentName" placeholder="Seu nome (opcional)" type="text"/>
+      <button class="bg-[#de0a26] text-white font-semibold rounded-lg py-3 hover:bg-[#e03e0f] transition-colors" type="submit">
+       Enviar Comentário
+      </button>
+     </form>
+    </section>
+   </main>
+  </div>
+  <script>
+   const form = document.getElementById('commentForm');
+    const commentList = document.querySelector('section.flex-1.overflow-y-auto');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const commentText = document.getElementById('commentText').value.trim();
+      const commentName = document.getElementById('commentName').value.trim() || 'Anônimo';
+      if (!commentText) return;
+      // Criar novo comentário
+      const article = document.createElement('article');
+      article.className = 'bg-white rounded-[20px] p-4 shadow-sm';
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('pt-BR', {day: '2-digit', month: 'long', year: 'numeric'}) + ', ' + now.toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'});
+      article.innerHTML = `
+        <header class="flex items-center gap-3 mb-2">
+          <img src="https://placehold.co/40x40/999999/ffffff?text=?" alt="Avatar genérico para usuário anônimo" class="w-10 h-10 rounded-full object-cover" />
+          <div>
+            <p class="text-[#0F0F0F] font-semibold text-sm leading-tight">${commentName}</p>
+            <time class="text-[#999999] text-xs">${formattedDate}</time>
+          </div>
+        </header>
+        <p class="text-[#0F0F0F] text-base leading-relaxed">${commentText.replace(/\n/g, '<br>')}</p>
+      `;
+      commentList.appendChild(article);
+      // Limpar formulário
+      form.reset();
+      // Scroll para o novo comentário
+      article.scrollIntoView({behavior: 'smooth'});
+    });
+  </script>
+ </body>
+</html>
