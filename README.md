@@ -40,8 +40,8 @@ Ideal para quem quer um sistema de comentários limpo, com moderação automáti
 
 1. Clone este repositório:
     ```bash
-    git clone https://github.com/seuusuario/seuprojeto.git
-    cd seuprojeto
+    git clone https://github.com/vitoryamedeiros/rsd-SJCC.git
+    cd rsd-SJCC
     ```
 
 2. Configure o Firebase:
