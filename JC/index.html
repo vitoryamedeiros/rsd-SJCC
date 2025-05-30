@@ -5,23 +5,11 @@
   <title>
    Site de Comentários
   </title>
+  <link rel="stylesheet" href="./style/style.css">
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-      font-family: "Inter", sans-serif;
-    }
-    /* Custom scrollbar for comments list */
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
  </head>
  <body class="bg-[#E9E9E9] min-h-screen flex justify-center items-center p-4">
   <div class="relative bg-[#E9E9E9] rounded-[20px] w-full max-w-[900px] aspect-auto flex flex-col select-none shadow-lg">
@@ -103,35 +91,6 @@
     </section>
    </main>
   </div>
-  <script>
-   const form = document.getElementById('commentForm');
-    const commentList = document.querySelector('section.flex-1.overflow-y-auto');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const commentText = document.getElementById('commentText').value.trim();
-      const commentName = document.getElementById('commentName').value.trim() || 'Anônimo';
-      if (!commentText) return;
-      // Criar novo comentário
-      const article = document.createElement('article');
-      article.className = 'bg-white rounded-[20px] p-4 shadow-sm';
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('pt-BR', {day: '2-digit', month: 'long', year: 'numeric'}) + ', ' + now.toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'});
-      article.innerHTML = `
-        <header class="flex items-center gap-3 mb-2">
-          <img src="https://placehold.co/40x40/999999/ffffff?text=?" alt="Avatar genérico para usuário anônimo" class="w-10 h-10 rounded-full object-cover" />
-          <div>
-            <p class="text-[#0F0F0F] font-semibold text-sm leading-tight">${commentName}</p>
-            <time class="text-[#999999] text-xs">${formattedDate}</time>
-          </div>
-        </header>
-        <p class="text-[#0F0F0F] text-base leading-relaxed">${commentText.replace(/\n/g, '<br>')}</p>
-      `;
-      commentList.appendChild(article);
-      // Limpar formulário
-      form.reset();
-      // Scroll para o novo comentário
-      article.scrollIntoView({behavior: 'smooth'});
-    });
-  </script>
+  <script type="module" src="./script/script.js"></script>
  </body>
 </html>
