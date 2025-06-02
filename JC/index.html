@@ -5,14 +5,181 @@
   <title>
    Site de Comentários
   </title>
+  <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./style/style.css">
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
  </head>
- <body class="bg-[#E9E9E9] min-h-screen flex justify-center items-center p-4">
-  <div class="relative bg-[#E9E9E9] rounded-[20px] w-full max-w-[900px] aspect-auto flex flex-col select-none shadow-lg">
+ <body class="bg-white text-gray-900 flex flex-col items-center justify-center min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-gray-300 w-full">
+     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+      <a class="flex items-center space-x-2" href="https://jc.uol.com.br">
+       <img alt="Logo do Jornal JC em fundo branco com letras vermelhas" class="h-10 w-auto" height="40" src="./img/logo_SSJC.png" width="120"/>
+      </a>
+      <nav class="hidden md:flex space-x-8 text-gray-700 font-semibold text-sm md:text-base">
+       <a class="hover:text-red-600 transition" href="https://jc.uol.com.br">
+        Início
+       </a>
+       <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/colunas">
+        Colunas
+       </a>
+       <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/noticias">
+        Notícias
+       </a>
+       <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/educacao">
+        Educação
+       </a>
+       <a class="hover:text-red-600 transition font-bold border-b-2 border-red-600" href="https://jc.uol.com.br/enem">
+        ENEM
+       </a>
+       <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/contato">
+        Contato
+       </a>
+      </nav>
+      <button aria-label="Abrir menu" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-600" id="menu-btn">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+     </div>
+     <!-- Mobile menu -->
+     <nav aria-label="Menu móvel" class="hidden md:hidden border-t border-gray-300 bg-white" id="mobile-menu">
+      <div class="flex flex-col space-y-1 px-4 py-3 text-gray-700 font-semibold text-base">
+       <a class="hover:text-red-600 transition py-1" href="https://jc.uol.com.br">
+        Início
+       </a>
+       <a class="hover:text-red-600 transition py-1" href="https://jc.uol.com.br/colunas">
+        Colunas
+       </a>
+       <a class="hover:text-red-600 transition py-1" href="https://jc.uol.com.br/noticias">
+        Notícias
+       </a>
+       <a class="hover:text-red-600 transition py-1" href="https://jc.uol.com.br/educacao">
+        Educação
+       </a>
+       <a class="hover:text-red-600 transition font-bold border-l-4 border-red-600 pl-2 py-1" href="https://jc.uol.com.br/enem">
+        ENEM
+       </a>
+       <a class="hover:text-red-600 transition py-1" href="https://jc.uol.com.br/contato">
+        Contato
+       </a>
+      </div>
+     </nav>
+    </header>
+    <!-- Main content -->
+    <main class="max-w-5xl w-full px-4 py-8 md:py-12">
+        <article class="prose prose-red max-w-none mx-auto">
+      <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
+       ENEM 2025: até quando vão as inscrições? Confira datas e horários
+      </h1>
+      <div class="flex items-center space-x-3 text-gray-600 text-sm mb-6">
+       <span>
+        Por
+        <strong>
+         Equipe JC Educação
+        </strong>
+       </span>
+       <span>
+        •
+       </span>
+       <time datetime="2025-06-02">
+        2 de junho de 2025
+       </time>
+      </div>
+      <img alt="Estudantes concentrados fazendo a prova do ENEM 2025 em uma sala de aula moderna, com mesas organizadas e iluminação natural" class="w-full rounded-lg mb-8" height="400" src="https://storage.googleapis.com/a1aa/image/4d40b86f-0d48-4719-45dd-80a12009bc75.jpg" width="900"/>
+      <p>
+       As inscrições para o Exame Nacional do Ensino Médio (ENEM) 2025 já estão abertas e vão até o dia
+       <strong>
+        15 de junho de 2025
+       </strong>
+       . Os candidatos interessados devem realizar o cadastro exclusivamente pelo site oficial do INEP, órgão responsável pela aplicação do exame.
+      </p>
+      <p>
+       O ENEM é uma das principais portas de entrada para o ensino superior no Brasil, sendo utilizado por diversas universidades públicas e privadas para seleção de estudantes. Além disso, o exame também é requisito para programas governamentais como o SISU, PROUNI e FIES.
+      </p>
+      <h2>
+       Datas importantes do ENEM 2025
+      </h2>
+      <ul class="list-disc list-inside mb-6">
+       <li>
+        <strong>
+         Inscrições:
+        </strong>
+        1º de junho a 15 de junho de 2025
+       </li>
+       <li>
+        <strong>
+         Pagamento da taxa:
+        </strong>
+        até 20 de junho de 2025
+       </li>
+       <li>
+        <strong>
+         Aplicação das provas:
+        </strong>
+        3 e 4 de novembro de 2025
+       </li>
+       <li>
+        <strong>
+         Divulgação dos resultados:
+        </strong>
+        15 de janeiro de 2026
+       </li>
+      </ul>
+      <h2>
+       Como se inscrever no ENEM 2025
+      </h2>
+      <p>
+       Para se inscrever, o candidato deve acessar o site oficial do INEP (
+       <a class="text-red-600 hover:underline" href="https://enem.inep.gov.br" rel="noopener noreferrer" target="_blank">
+        enem.inep.gov.br
+       </a>
+       ) e preencher o formulário com seus dados pessoais, além de escolher a cidade onde deseja realizar a prova.
+      </p>
+      <p>
+       É importante lembrar que a taxa de inscrição é de R$ 85,00, mas estudantes de baixa renda e participantes do Cadastro Único podem solicitar isenção.
+      </p>
+      <h2>
+       Horários das provas
+      </h2>
+      <p>
+       As provas do ENEM 2025 serão aplicadas em dois domingos consecutivos, nos seguintes horários:
+      </p>
+      <ul class="list-disc list-inside mb-6">
+       <li>
+        <strong>
+         3 de novembro:
+        </strong>
+        das 13h30 às 19h
+       </li>
+       <li>
+        <strong>
+         4 de novembro:
+        </strong>
+        das 13h30 às 18h30
+       </li>
+      </ul>
+      <img alt="Relógio marcando horário de prova do ENEM com livros e canetas ao fundo, simbolizando o tempo para realização do exame" class="w-full rounded-lg mb-8" height="300" src="https://storage.googleapis.com/a1aa/image/ad6dc487-7c09-4b2f-c6cd-dd9f37b070f2.jpg" width="900"/>
+      <h2>
+       Dicas para o dia da prova
+      </h2>
+      <p>
+       No dia da prova, é fundamental que o candidato leve documento oficial com foto, caneta preta de tubo transparente, e chegue com antecedência ao local de prova para evitar imprevistos.
+      </p>
+      <p>
+       Além disso, é recomendado revisar o conteúdo com calma, manter a calma e cuidar da alimentação para garantir um bom desempenho.
+      </p>
+      <h2>
+       Mais informações
+      </h2>
+      <p>
+       Para acompanhar todas as novidades e atualizações sobre o ENEM 2025, acesse regularmente o site do INEP e o portal do JC Educação.
+      </p>
+     </article>
+    </main>
+    <div class="relative bg-[#E9E9E9] rounded-[20px] w-full max-w-[900px] aspect-auto flex flex-col select-none shadow-lg mx-auto mt-8">
    <!-- Header -->
    <header class="flex items-center gap-4 px-6 py-4 bg-[#0F0F0F] rounded-t-[20px]">
     <img alt="Ícone de comentários branco em fundo preto" src="img\logo_SSJC.png" width="50"/>
@@ -23,7 +190,7 @@
    <!-- Main content -->
    <main class="flex flex-col p-6 gap-6 flex-1 overflow-hidden">
     <!-- Comentários existentes -->
-    <section class="flex-1 overflow-y-auto scrollbar-hide space-y-4">
+    <section class="flex-1 max-h-[300px] overflow-y-auto space-y-4 custom-scroll">
      <!-- Comentário 1 -->
      <article class="bg-white rounded-[20px] p-4 shadow-sm">
       <header class="flex items-center gap-3 mb-2">
@@ -82,15 +249,36 @@
       Deixe seu comentário
      </h2>
      <form class="flex flex-col gap-4" id="commentForm">
-      <textarea aria-label="Campo para escrever comentário" class="resize-none border border-[#D9D9D9] rounded-lg p-3 text-[#0F0F0F] text-base placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#FF4A1A]" id="commentText" placeholder="Escreva seu comentário aqui..." required="" rows="4"></textarea>
-      <input aria-label="Campo para nome opcional" class="border border-[#D9D9D9] rounded-lg p-3 text-[#0F0F0F] text-base placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#FF4A1A]" id="commentName" placeholder="Seu nome (opcional)" type="text"/>
-      <button class="bg-[#de0a26] text-white font-semibold rounded-lg py-3 hover:bg-[#e03e0f] transition-colors" type="submit">
+      <textarea aria-label="Campo para escrever comentário" class="resize-none border border-[#D9D9D9] rounded-lg p-3 text-[#0F0F0F] text-base placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#DA4357]" id="commentText" placeholder="Escreva seu comentário aqui..." required="" rows="4"></textarea>
+      <input aria-label="Campo para nome opcional" class="border border-[#D9D9D9] rounded-lg p-3 text-[#0F0F0F] text-base placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#DA4357]" id="commentName" placeholder="Seu nome (opcional)" type="text"/>
+      <button class="bg-[#de0a26] text-white font-semibold rounded-lg py-3 hover:bg-[#DA4357] transition-colors" type="submit">
        Enviar Comentário
       </button>
      </form>
     </section>
    </main>
   </div>
+  <div id="alertContainer" class="fixed top-4 right-4 space-y-2 z-50"></div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-100 border-t border-gray-300 mt-16">
+        <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm space-y-4 md:space-y-0">
+         <p>
+          © 2025 Jornal JC - Todos os direitos reservados.
+         </p>
+         <nav class="flex space-x-6">
+          <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/privacidade">
+           Política de Privacidade
+          </a>
+          <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/termos">
+           Termos de Uso
+          </a>
+          <a class="hover:text-red-600 transition" href="https://jc.uol.com.br/contato">
+           Contato
+          </a>
+         </nav>
+        </div>
+       </footer>
   <script type="module" src="./script/script.js"></script>
  </body>
 </html>

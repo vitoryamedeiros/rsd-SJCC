@@ -136,29 +136,66 @@ const form = document.getElementById('commentForm');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
+  const submitButton = form.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Enviando...';
+
   const commentText = document.getElementById('commentText').value.trim();
   const commentName = document.getElementById('commentName').value.trim() || 'Anônimo';
 
-  if (!commentText) return alert('Por favor, escreva um comentário.');
+  if (!commentText) {
+    showAlert('Por favor, escreva um comentário.', 'warning');
+    submitButton.disabled = false;
+    submitButton.textContent = 'Enviar Comentário';
+    return;
+  }
 
-  // Chama o Gemini pra moderar o comentário
-  const aprovado = await verificaComentario(commentText);
-
-  // Salva o comentário no Firebase com o status retornado
-  await salvarComentario(commentName, commentText, aprovado ? "aprovado" : "reprovado");
+  try {
+    // Só faz UMA VEZ
+    const aprovado = await verificaComentario(commentText);
+    await salvarComentario(commentName, commentText, aprovado ? "aprovado" : "reprovado");
 
   if (aprovado) {
-    // Atualiza a lista mostrando o novo comentário na tela
     const commentList = document.querySelector('section.flex-1.overflow-y-auto');
     const article = criarComentarioDOM(commentName, commentText, { seconds: Date.now() / 1000 });
     commentList.prepend(article);
     article.scrollIntoView({ behavior: 'smooth' });
   } else {
-    alert("Seu comentário foi recebido, mas contém conteúdo inadequado e ficará oculto.");
+    showAlert('Seu comentário foi recebido, mas contém conteúdo inadequado e ficará oculto.', 'error');
   }
 
   form.reset();
+} catch (error) {
+  showAlert('Ocorreu um erro ao enviar o comentário. Tente novamente.', 'error');
+  console.error(error);
+} finally {
+  submitButton.disabled = false; // REATIVA O BOTÃO
+  submitButton.textContent = 'Enviar Comentário';
+}
 });
+
+function showAlert(message, type = 'info') {
+  const container = document.getElementById('alertContainer');
+  const alert = document.createElement('div');
+
+  const colors = {
+    success: 'bg-green-500',
+    error: 'bg-red-500',
+    info: 'bg-blue-500',
+    warning: 'bg-yellow-500 text-black'
+  };
+
+  alert.className = `text-white px-4 py-2 rounded-lg shadow-md animate-fade-in-out ${colors[type] || colors.info}`;
+  alert.textContent = message;
+
+  container.appendChild(alert);
+
+  setTimeout(() => {
+    alert.classList.add('opacity-0', 'translate-x-4');
+    setTimeout(() => container.removeChild(alert), 500);
+  }, 4000); // Exibe por 4 segundos
+}
+
 
 // Carrega comentários aprovados ao iniciar
 window.addEventListener('load', carregarComentarios);
