@@ -21,6 +21,7 @@ Ideal para quem quer um sistema de comentários limpo, com moderação automáti
 - **Fetch API**: comunicação REST com a Google Gemini.
 - **HTML/CSS**: estrutura e estilo dos comentários na tela (pode ser Tailwind CSS ou custom).
 - **Date API do JS**: para formatação amigável das datas dos comentários.
+- **Vercel**: para distribuição do site.
 
 ---
 
